@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendWise Dashboard</title>
+<link rel="stylesheet" href="styles.css" /></head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">₵</span>
+        <h2>SpendWise</h2>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="#" class="nav-item">
+          <span>💳</span> Transactions
+        </a>
+        <a href="#" class="nav-item">
+          <span>📈</span> Analytics
+        </a>
+        <a href="#" class="nav-item">
+          <span>🎯</span> Budgets
+        </a>
+        <a href="#" class="nav-item">
+          <span>⚙️</span> Settings
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar">AK</div>
+          <div>
+            <p class="user-name">Alex Kim</p>
+            <p class="user-email">alex@email.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Dashboard Overview</h1>
+        <p>Track your spending, September 2026</p>
+      </div>
+      <div class="header-right">
+        <div class="balance-card">
+          <span>Total Balance</span>
+          <strong>KSh 84,250</strong>
+        </div>
+        <button class="btn-primary">+ Add Expense</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <div class="card-icon food">🍔</div>
+            <span class="card-trend up">+2.4%</span>
+          </div>
+          <h3>Food & Dining</h3>
+          <p class="card-amount">KSh 12,400</p>
+          <div class="card-progress">
+            <div class="progress-bar"><div class="progress" style="width: 62%"></div></div>
+            <span>62% of budget</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <div class="card-icon transport">🚌</div>
+            <span class="card-trend down">-5.1%</span>
+          </div>
+          <h3>Transport</h3>
+          <p class="card-amount">KSh 6,800</p>
+          <div class="card-progress">
+            <div class="progress-bar"><div class="progress" style="width: 45%"></div></div>
+            <span>45% of budget</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <div class="card-icon rent">🏠</div>
+            <span class="card-trend neutral">On track</span>
+          </div>
+          <h3>Rent</h3>
+          <p class="card-amount">KSh 25,000</p>
+          <div class="card-progress">
+            <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+            <span>Paid • Due Oct 1</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <div class="card-icon entertainment">🎬</div>
+            <span class="card-trend up">+12%</span>
+          </div>
+          <h3>Entertainment</h3>
+          <p class="card-amount">KSh 4,200</p>
+          <div class="card-progress">
+            <div class="progress-bar"><div class="progress" style="width: 35%"></div></div>
+            <span>35% of budget</span>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <div class="card-icon savings">💰</div>
+            <span class="card-trend up">+18%</span>
+          </div>
+          <h3>Savings</h3>
+          <p class="card-amount">KSh 22,000</p>
+          <div class="card-progress">
+            <div class="progress-bar"><div class="progress" style="width: 73%"></div></div>
+            <span>73% of goal</span>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <div class="card-icon utilities">💡</div>
+            <span class="card-trend down">-3.2%</span>
+          </div>
+          <h3>Utilities</h3>
+          <p class="card-amount">KSh 5,850</p>
+          <div class="card-progress">
+            <div class="progress-bar"><div class="progress" style="width: 58%"></div></div>
+            <span>58% of budget</span>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
