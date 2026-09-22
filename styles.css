@@ -1,0 +1,230 @@
+/* 3. THEME USING CSS CUSTOM PROPERTIES */
+:root {
+  --brand: #4f46e5;
+  --brand-light: #e0e7ff;
+  --accent: #10b981;
+  --surface: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+/* 2. CSS GRID FOR OVERALL LAYOUT */
+.dashboard {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  min-height: 100vh;
+}
+
+.sidebar { grid-area: sidebar; }
+.header { grid-area: header; }
+.main { grid-area: main; }
+
+/* SIDEBAR - FLEXBOX */
+.sidebar {
+  background: var(--card-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.logo-icon {
+  background: var(--brand);
+  color: white;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.nav-item.active, .nav-item:hover {
+  background: var(--brand-light);
+  color: var(--brand);
+}
+.sidebar-footer { margin-top: auto; }
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar {
+  width: 36px; height: 36px;
+  background: var(--brand);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.user-name { font-size: 14px; font-weight: 600; }
+.user-email { font-size: 12px; color: var(--text-secondary); }
+
+/* HEADER - FLEXBOX */
+.header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+}
+.header-left h1 { font-size: 20px; }
+.header-left p { font-size: 14px; color: var(--text-secondary); }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.balance-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.balance-card span { font-size: 12px; color: var(--text-secondary); }
+.btn-primary {
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* MAIN CARDS */
+.main { padding: 28px; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD - FLEXBOX INSIDE */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow);
+  outline: none;
+  
+  /* 5. MICRO-INTERACTIONS */
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.food { background: #fef3c7; }
+.transport { background: #dbeafe; }
+.rent { background: #ede9fe; }
+.entertainment { background: #fce7f3; }
+.savings { background: #d1fae5; }
+.utilities { background: #ffedd5; }
+
+.card h3 { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+.card-amount { font-size: 22px; font-weight: 700; }
+
+.card-trend { font-size: 12px; padding: 4px 8px; border-radius: 20px; }
+.up { background: #dcfce7; color: #166534; }
+.down { background: #fee2e2; color: #991b1b; }
+.neutral { background: var(--surface); color: var(--text-secondary); }
+
+.card-progress { display: flex; flex-direction: column; gap: 6px; }
+.card-progress span { font-size: 12px; color: var(--text-secondary); }
+.progress-bar { height: 6px; background: var(--surface); border-radius: 10px; overflow: hidden; }
+.progress { height: 100%; background: var(--brand); border-radius: 10px; }
+
+/* 5. HOVER AND FOCUS STATES */
+.card:hover,
+.card:focus {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 20px -5px rgba(0,0,0,0.1);
+  border-color: var(--brand);
+}
+
+/* 4. RESPONSIVE */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "sidebar"
+      "header"
+      "main";
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+  .header-right { width: 100%; justify-content: space-between; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* STRETCH GOAL: DARK THEME */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #818cf8;
+    --brand-light: #312e81;
+    --accent: #34d399;
+    --surface: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+  }
+}
